@@ -26,13 +26,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         cardsArray = model.getCards()
         
         // Set the viewController as the datasource and delegate of the collection view
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        // Run the timer
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
